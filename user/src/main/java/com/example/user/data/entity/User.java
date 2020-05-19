@@ -1,4 +1,4 @@
-package com.pms.common.user.data.entity;
+package com.example.user.data.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -9,39 +9,53 @@ import java.util.UUID;
 @Entity
 @Table(name="USER")
 public class User {
-    @Id
-    @Column(name="UserId", columnDefinition="VARCHAR(255")
-    @GeneratedValue(generator="uuid2")
-    @GenericGenerator(name="uuid2", strategy="org.hibernate.id.UUIDGenerator")
-    private UUID userId;
 
-    @Column(name="UserName")
+    //    @Id
+//    @Column(name="UserId", columnDefinition="VARCHAR(255)")
+//    @GeneratedValue(generator="uuid2")
+//    @GenericGenerator(name="uuid2", strategy="org.hibernate.id.UUIDGenerator")
+//    private UUID userId;
+    @Id
+    @Column(name = "USER_ID")
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(name = "NAME", nullable = false)
     private String userName;
 
-    @Column(name="UserAccountId")
+    @Column(name = "ACCOUNT_ID", nullable = false)
     private String userAccountId;
 
-    @Column(name="UserPassword")
+    @Column(name = "PASSWORD", nullable = false)
     private String userPassword;
 
-    @Column(name="UserPermission")
+    @Column(name = "PERMISSION", nullable = false)
     private String userPermission;
 
-    @Column(name="CreatedDateTime")
+    @Column(name = "CREATE_DATETIME", nullable = false)
     private Date createdDateTime;
 
-    @Column(name="UpdatedDateTime")
+    @Column(name = "UPDATE_DATETIME")
     private Date updatedDateTime;
 
-    @Column(name="DeletedDateTime")
+    @Column(name = "DELETED_DATETIME")
     private Date deletedDateTime;
 
-    public UUID getUserId() {
-        return userId;
+//    public UUID getUserId() {
+//        return userId;
+//    }
+//
+//    public void setUserId(UUID userId) {
+//        this.userId = userId;
+//    }
+
+    public long getId() {
+        return id;
     }
 
-    public void setUserId(UUID userId) {
-        this.userId = userId;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getUserName() {

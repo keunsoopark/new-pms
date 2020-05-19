@@ -1,7 +1,7 @@
-package com.pms.common.user.business.service;
+package com.example.user.business.service;
 
-import com.pms.common.user.business.domain.UserInfo;
-import com.pms.common.user.data.repository.UserRepository;
+import com.example.user.business.domain.UserInfo;
+import com.example.user.data.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,7 +18,12 @@ public class UserInfoService {
     }
 
     public List<UserInfo> getUserInfosByName(String userName) {
-        return this.userRepository.findByName(userName);
+        List<UserInfo> userInfos = new ArrayList<>();
+
+        Iterable<UserInfo> results = this.userRepository.findByName(userName);
+        results.forEach(userInfos::add);
+
+        return userInfos;
     }
 
     public UserInfo getUserInfoByAccountId(String accountId) {

@@ -1,10 +1,11 @@
-package com.pms.common.user.business.domain;
+package com.example.user.business.domain;
 
 import java.util.Date;
 import java.util.UUID;
 
 public class UserInfo {
-    private UUID userId;
+    //    private UUID userId;
+    private long userId;
 
     private String userName;
 
@@ -14,11 +15,19 @@ public class UserInfo {
 
     private Date createdDateTime;
 
-    public UUID getUserId() {
+//    public UUID getUserId() {
+//        return userId;
+//    }
+//
+//    public void setUserId(UUID userId) {
+//        this.userId = userId;
+//    }
+
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(UUID userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 

@@ -1,7 +1,7 @@
-package com.pms.common.user.web.service;
+package com.example.user.web.service;
 
-import com.pms.common.user.business.domain.UserInfo;
-import com.pms.common.user.business.service.UserInfoService;
+import com.example.user.business.domain.UserInfo;
+import com.example.user.business.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
